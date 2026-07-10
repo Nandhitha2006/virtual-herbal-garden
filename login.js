@@ -8,8 +8,8 @@ document.getElementById("loginForm")
         password: document.getElementById("password").value
     };
 
-    const response = await fetch (
-       "https://virtual-herbal-garden-backend-0aqg.onrender.com/login",
+    const response = await fetch(
+      "https://virtual-herbal-garden-backend-0aqg.onrender.com/login",
         {
             method: "POST",
             headers: {

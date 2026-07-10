@@ -10,7 +10,7 @@ document.getElementById("registerForm")
     };
 
     const response = await fetch(
-  "https://virtual-herbal-garden-backend-0aqg.onrender.com/register",    
+ "https://virtual-herbal-garden-backend-0aqg.onrender.com/register",   
         {
             method: "POST",
             headers: {
