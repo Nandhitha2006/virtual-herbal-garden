@@ -9,7 +9,7 @@ document.getElementById("loginForm")
     };
 
     const response = await fetch(
-        "http://localhost:5000/login",
+       "https://virtual-herbal-garden-backend-0aqg.onrender.com/login" 
         {
             method: "POST",
             headers: {
