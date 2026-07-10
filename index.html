@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Virtual Herbal Garden</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+    <section id="home" class="hero-section">
+    <h1>🌿 Welcome to Virtual Herbal Garden 🌿</h1>
+    <p>Discover medicinal plants and their health benefits.</p>
+</section>
+
+
+   
+    <div class="search-box"> <p id="plantCount"></p>
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search Plants..."
+    >
+</div>
+
+    <ul class="nav-links">
+<li><a href="home.html">Home</a></li>
+<li><a href="plants.html">Plants</a></li>
+ <li><a href="about.html">About</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="#" onclick="logout()">Logout</a></li>
+  <li><a href="#" onclick="showFavorites()">Favorites</a></li>  
+ <li><a href="#" onclick="showAllPlants()">All Plants</a></li>      
+    </ul>
+</nav>
+
+   <section id="plants">
+    <h2>Our Herbal Plants</h2>
+    <div id="plants-container"></div>
+</section>
+<section id="about">
+    <h2>About Us</h2>
+    <p>
+        Virtual Herbal Garden is a web application that helps users
+        learn about medicinal plants and their uses.
+    </p>
+</section>
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: herbalgarden@gmail.com</p>
+    <p>Phone: +91 8072067708</p>
+</section>
+    <div id="detailsModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <img id="modalImage">
+
+        <h2 id="modalName"></h2>
+
+        <p><b>Scientific Name:</b>
+            <span id="modalScientific"></span>
+        </p>
+
+        <p><b>Uses:</b>
+            <span id="modalUses"></span>
+        </p>
+    </div>
+</div>
+    <div id="plantModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <img id="modalImage" width="250">
+
+        <h2 id="modalName"></h2>
+
+        <p><b>Scientific Name:</b>
+            <span id="modalScientific"></span>
+        </p>
+
+        <p><b>Uses:</b>
+            <span id="modalUses"></span>
+        </p>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+
+<footer class="footer">
+    <p>🌿 Virtual Herbal Garden © 2026</p>
+    <p>Developed by Nandhitha K</p>
+    <p>B.E Computer Science Engineering</p>
+</footer>
+<button id="topBtn" onclick="topFunction()">
+⬆
+</button>
+</body>
+</html>
+<button onclick="showAllPlants()">
+    ← Back to All Plants
+</button>

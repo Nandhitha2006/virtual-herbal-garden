@@ -1,0 +1,362 @@
+body{
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0fff0;
+}
+
+h1{
+    color: green;
+}
+
+.card{
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 300px;
+    padding: 15px;
+    margin: 15px auto;
+    background: white;
+}
+
+img{
+    width: 200px;
+    height: 150px;
+}
+.card{
+    width:300px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    padding:15px;
+    margin:20px auto;
+    text-align:center;
+    box-shadow:0 2px 5px rgba(0,0,0,0.2);
+}
+
+.card img{
+    width:200px;
+    height:150px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+button{
+    padding:10px 15px;
+    background-color:green;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+.navbar{
+ background: green;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-links a:hover{
+    color: yellow;
+}
+.search-box{
+    text-align: center;
+    margin: 20px;
+}
+
+#searchInput{
+    width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    font-size: 16px;
+}
+.logo{
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+}
+.navbar{
+    background-color: green;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar h1{
+    color: white;
+    font-size: 30px;
+    margin: 0;
+}
+
+.nav-links{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.search-box{
+    margin-left: 20px;
+}
+
+#searchInput{
+    padding: 8px;
+    width: 200px;
+    border-radius: 5px;
+    border: none;
+}
+.hero{
+    text-align: center;
+    padding: 40px;
+    background: #e8f5e9;
+}
+
+.hero h2{
+    color: green;
+    font-size: 35px;
+}
+
+.hero p{
+    font-size: 18px;
+}
+.card{
+    transition: 0.3s;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+}
+button{
+    background: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background: darkgreen;
+}
+.modal{
+    display:none;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+
+.modal-content{
+    background:white;
+    width:400px;
+    margin:100px auto;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.close{
+    float:right;
+    font-size:30px;
+    cursor:pointer;
+}
+
+#modalImage{
+    width:250px;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+}
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+}
+
+.modal-content{
+    background:white;
+    width:400px;
+    margin:80px auto;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.close{
+    float:right;
+    font-size:30px;
+    cursor:pointer;
+}
+
+#modalImage{
+    width:250px;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+}
+.footer{
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:50px;
+}
+#topBtn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    padding:10px 15px;
+    border:none;
+    border-radius:50%;
+    background:green;
+    color:white;
+    cursor:pointer;
+}
+#plants-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card{
+    width: 250px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.card img{
+    width: 220px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+#plants-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+}
+
+.card{
+    width:250px;
+    padding:15px;
+    border-radius:10px;
+    text-align:center;
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.card img{
+    width:220px;
+    height:150px;
+    object-fit:cover;
+    border-radius:10px;
+}
+#plantForm{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 20px auto;
+    gap: 10px;
+}
+
+#plantForm input{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#plantForm button{
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#plantForm button:hover{
+    background-color: darkgreen;
+}
+.register-container{
+    width: 350px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.register-container input{
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.register-container button{
+    padding: 10px 20px;
+}
+.about-container,
+.contact-container{
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.about-container p,
+.contact-container p{
+    font-size: 18px;
+    margin: 15px;
+}
+
+.about-container ul{
+    list-style: none;
+}
+
+.about-container li{
+    margin: 10px;
+}
+
+button{
+    padding: 10px 20px;
+    background: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

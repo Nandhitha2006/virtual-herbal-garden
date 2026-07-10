@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plants - Virtual Herbal Garden</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>🌿 Virtual Herbal Garden 🌿</h1>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search Plants..."
+        >
+
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="plants.html">Plants</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#" onclick="showFavorites()">Favorites</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Heading -->
+    <section class="plants-header">
+        <h2>🌱 Medicinal Plants Collection 🌱</h2>
+        <p>Explore medicinal plants and their health benefits.</p>
+    </section>
+
+    <!-- Plant Cards -->
+     <h2>Add New Plant</h2>
+
+<form id="plantForm">
+    <input type="text" id="name" placeholder="Plant Name" required>
+
+    <input type="text" id="scientificName" placeholder="Scientific Name" required>
+
+    <input type="text" id="uses" placeholder="Uses" required>
+
+    <input type="text" id="image" placeholder="Image Name (example: tulsi.jpg)" required>
+
+    <button type="submit">Add Plant</button>
+</form>
+
+<br>
+
+<div id="plants-container"></div>
+    <div id="plants-container"></div>
+
+    <div id="firstAidBox"></div>
+
+    <!-- Plant Details Popup -->
+    <div id="detailsModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span onclick="closeModal()" class="close">&times;</span>
+
+            <h2 id="detailName"></h2>
+            <p id="detailScientific"></p>
+            <p id="detailUses"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
