@@ -1,8 +1,8 @@
 if(localStorage.getItem("loggedIn") !== "true"){
-    window.location.href = "login.html";
+    window.location.href = "register.html";
 }
 let allPlants = [];
-fetch("http://localhost:5000/plants")
+fetch("https://virtual-herbal-garden-backend-0aqg.onrender.com/plants")
   .then(response => response.json())
   .then(data => {
     allPlants = data;
