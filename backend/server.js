@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect("mongodb://127.0.0.1:27017/herbalgarden")
+mongoose.connect("mongodb+srv://knandhitha2006_db_user:061720@cluster0.2ovblat.mongodb.net/virtual-herbal-garden?appName=Cluster0")
 .then(() => console.log("MongoDB Connected"))
 .catch((err) => console.log(err));
 
