@@ -54,12 +54,17 @@ document.getElementById("searchInput").addEventListener("keyup", function() {
     displayPlants(result);
 });
 
-// 5. Open Modal/Popup for Plant Details (Fixes Both Potential IDs)
+// 5. Open Modal/Popup Safely (Fixes Mismatched/Null HTML Elements Error)
 function showDetails(name, scientific, uses, image) {
-    if (document.getElementById("modalName")) document.getElementById("modalName").innerText = name;
-    if (document.getElementById("modalScientific")) document.getElementById("modalScientific").innerText = scientific;
-    if (document.getElementById("modalUses")) document.getElementById("modalUses").innerText = uses;
-    if (document.getElementById("modalImage")) document.getElementById("modalImage").src = "images/" + image;
+    const mName = document.getElementById("modalName");
+    const mScientific = document.getElementById("modalScientific");
+    const mUses = document.getElementById("modalUses");
+    const mImage = document.getElementById("modalImage");
+
+    if (mName) mName.innerText = name;
+    if (mScientific) mScientific.innerText = scientific;
+    if (mUses) mUses.innerText = uses;
+    if (mImage) mImage.src = "images/" + image;
 
     const modal1 = document.getElementById("detailsModal");
     const modal2 = document.getElementById("plantModal");
