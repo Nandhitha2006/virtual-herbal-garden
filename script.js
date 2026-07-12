@@ -12,12 +12,6 @@ fetch(BACKEND_URL)
   .then(data => {
     allPlants = data;
     displayPlants(data);
-    
-    // SAFE FIX: Only update plantCount if the element actually exists on the page
-    const counterElement = document.getElementById("plantCount");
-    if (counterElement) {
-        counterElement.innerText = "🌿 Total Plants : " + data.length;
-    }
   })
   .catch(err => console.error("Error fetching plants:", err));
 
@@ -63,40 +57,31 @@ if (searchInput) {
     });
 }
 
-// 5. Open Modal/Popup Safely
+// 5. Open Popup Modal (Matches Your exact HTML IDs perfectly)
 function showDetails(name, scientific, uses, image) {
-    const mName = document.getElementById("modalName");
-    const mScientific = document.getElementById("modalScientific");
-    const mUses = document.getElementById("modalUses");
-    const mImage = document.getElementById("modalImage");
+    const mName = document.getElementById("detailName");
+    const mScientific = document.getElementById("detailScientific");
+    const mUses = document.getElementById("detailUses");
 
     if (mName) mName.innerText = name;
-    if (mScientific) mScientific.innerText = scientific;
-    if (mUses) mUses.innerText = uses;
-    if (mImage) mImage.src = "images/" + image;
+    if (mScientific) mScientific.innerText = "Scientific Name: " + scientific;
+    if (mUses) mUses.innerText = "Uses: " + uses;
 
-    const modal1 = document.getElementById("detailsModal");
-    const modal2 = document.getElementById("plantModal");
-
-    if (modal1) { modal1.style.display = "block"; }
-    if (modal2) { modal2.style.display = "block"; }
+    const modal = document.getElementById("detailsModal");
+    if (modal) { 
+        modal.style.display = "block"; 
+    }
 }
 
 // 6. Close Modal/Popup Function
 function closeModal() {
-    const modal1 = document.getElementById("detailsModal");
-    const modal2 = document.getElementById("plantModal");
-
-    if (modal1) { modal1.style.display = "none"; }
-    if (modal2) { modal2.style.display = "none"; }
+    const modal = document.getElementById("detailsModal");
+    if (modal) { 
+        modal.style.display = "none"; 
+    }
 }
 
-// 7. Smooth Scroll to Top Button
-function topFunction() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-// 8. Add or Remove Plant from Favorites
+// 7. Add or Remove Plant from Favorites
 function addFavorite(name) {
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
     if (favorites.includes(name)) {
@@ -109,19 +94,19 @@ function addFavorite(name) {
     localStorage.setItem("favorites", JSON.stringify(favorites));
 }
 
-// 9. Display Only Favorited Plants
+// 8. Display Only Favorited Plants
 function showFavorites() {
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
     const favoritePlants = allPlants.filter(plant => favorites.includes(plant.name));
     displayPlants(favoritePlants);
 }
 
-// 10. Reset Filter and Show All Plants
+// 9. Reset Filter and Show All Plants
 function showAllPlants() {
     displayPlants(allPlants);
 }
 
-// 11. Trigger Alert for First Aid Application Information
+// 10. Trigger Alert for First Aid Application Information
 function showFirstAid(name) {
     let message = "";
     const lowerName = name.toLowerCase();
@@ -144,7 +129,7 @@ function showFirstAid(name) {
     alert(message);
 }
 
-// 12. Submit New Plant Form to Live Render Server
+// 11. Submit New Plant Form to Live Render Server
 const plantForm = document.getElementById("plantForm");
 if (plantForm) {
     plantForm.addEventListener("submit", async function(e) {
@@ -169,7 +154,7 @@ if (plantForm) {
     });
 }
 
-// 13. Delete Plant Record from Live Server Database
+// 12. Delete Plant Record from Live Server Database
 async function deletePlant(id) {
     const confirmDelete = confirm("Are you sure you want to delete this plant?");
     if (!confirmDelete) { return; }
@@ -184,7 +169,7 @@ async function deletePlant(id) {
     }
 }
 
-// 14. Terminate User Session and Logout
+// 13. Terminate User Session and Logout
 function logout() {
     localStorage.removeItem("loggedIn");
     alert("Logged out successfully");
