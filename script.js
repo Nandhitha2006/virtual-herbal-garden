@@ -12,13 +12,19 @@ fetch(BACKEND_URL)
   .then(data => {
     allPlants = data;
     displayPlants(data);
-    document.getElementById("plantCount").innerText = "🌿 Total Plants : " + data.length;
+    
+    // SAFE FIX: Only update plantCount if the element actually exists on the page
+    const counterElement = document.getElementById("plantCount");
+    if (counterElement) {
+        counterElement.innerText = "🌿 Total Plants : " + data.length;
+    }
   })
   .catch(err => console.error("Error fetching plants:", err));
 
 // 3. Render Plant Cards Dynamically
 function displayPlants(data) {
     const container = document.getElementById("plants-container");
+    if (!container) return;
     container.innerHTML = "";
     
     if (data.length === 0) {
@@ -46,15 +52,18 @@ function displayPlants(data) {
 }
 
 // 4. Live Search Filtering Functionality
-document.getElementById("searchInput").addEventListener("keyup", function() {
-    const text = this.value.toLowerCase();
-    const result = allPlants.filter(plant =>
-        plant.name.toLowerCase().includes(text)
-    );
-    displayPlants(result);
-});
+const searchInput = document.getElementById("searchInput");
+if (searchInput) {
+    searchInput.addEventListener("keyup", function() {
+        const text = this.value.toLowerCase();
+        const result = allPlants.filter(plant =>
+            plant.name.toLowerCase().includes(text)
+        );
+        displayPlants(result);
+    });
+}
 
-// 5. Open Modal/Popup Safely (Fixes Mismatched/Null HTML Elements Error)
+// 5. Open Modal/Popup Safely
 function showDetails(name, scientific, uses, image) {
     const mName = document.getElementById("modalName");
     const mScientific = document.getElementById("modalScientific");
@@ -136,26 +145,29 @@ function showFirstAid(name) {
 }
 
 // 12. Submit New Plant Form to Live Render Server
-document.getElementById("plantForm").addEventListener("submit", async function(e) {
-    e.preventDefault();
-    const plant = {
-        name: document.getElementById("name").value,
-        scientificName: document.getElementById("scientificName").value,
-        uses: document.getElementById("uses").value,
-        image: document.getElementById("image").value
-    };
+const plantForm = document.getElementById("plantForm");
+if (plantForm) {
+    plantForm.addEventListener("submit", async function(e) {
+        e.preventDefault();
+        const plant = {
+            name: document.getElementById("name").value,
+            scientificName: document.getElementById("scientificName").value,
+            uses: document.getElementById("uses").value,
+            image: document.getElementById("image").value
+        };
 
-    const response = await fetch(BACKEND_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(plant)
+        const response = await fetch(BACKEND_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(plant)
+        });
+
+        if (response.ok) {
+            alert("Plant added successfully!");
+            location.reload();
+        }
     });
-
-    if (response.ok) {
-        alert("Plant added successfully!");
-        location.reload();
-    }
-});
+}
 
 // 13. Delete Plant Record from Live Server Database
 async function deletePlant(id) {
